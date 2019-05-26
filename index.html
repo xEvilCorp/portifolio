@@ -1,17 +1,98 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Portifolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="css/prod/main.css">
-    <script src="main.js"></script>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/prod/main.css'>
+    <link rel="stylesheet" type='text/css' href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+
 </head>
+<body> 
+    <header>
+        <a title="Contact" href="#">Contact</a>
+        <a title="Portfolio" href="#">Portfolio</a>
+        <a title="About" href="#">About</a>
+        <a title="Repository" href="#">Repository</a>
+    </header>
+    <main>
+        <section class="wrapper-picture"> 
+            <figure class="picture">
+                <img src="img/wallpaper.png">
+            </figure>
+        </section>
 
-<body>
-    <button><span>PorTfOlio</span></button>
+        <section class="content">
+            <h1>FELIPE SALAZAR</h1>
+            <p class="role">Computer Science Student</p>
+            <section class="location">
+                <section class="title">
+                    <i class="fas fa-map-marker-alt"></i> 
+                    <span>Location</span>
+                </section>
+                <section class="info">
+                    <span>São Paulo - Brazil</span>
+                </section>
+            </section>
+            <hr>
+
+            <section class="about">
+                <section class="title">
+                    <i class="fas fa-info-circle"></i>
+                    <span>About</span> 
+                </section>
+                <section class="info">
+                    <p>
+                        As a programmer I can develop responsive websites and applications for desktops and phones with both a flat and classic appearence.
+                        Ideologically, I'm a pro corporations anarcho communist individualist, following the genius thoughts of Hans Hermann Hoppe.
+                        I'm interested in activities regarding porting android to windows based phones, hacking games and emulation.
+                    </p>
+                    
+                </section>
+            </section>
+            <hr>
+            <section class="social">
+                <section class="title">
+                    <i class="fas fa-share-alt"></i>
+                    <span>Social</span> 
+                </section>
+                <section class="info">
+                    <button class="discord">
+                        <i class="fab fa-discord"></i>
+                    </button>
+                    <button class="github">
+                        <i class="fab fa-github"></i>
+                    </button>
+                    <button class="linkedin">
+                        <i class="fab fa-linkedin"></i>
+                    </button>
+                </section>
+            </section>
+        </section>
+    </main>
+    <section class="contect">
+        <div class="title">
+            <h2>Contact</h2>
+        </div>
+        <form class="form" action="https://docs.google.com/forms/d/e/1FAIpQLSf_SG7cEM3ST92QIs_KIp-lLm87Ch_BxVbSsEjktydVzshsKA/formResponse?embedded=true">
+
+            <label>Name</label>
+            <input placeholder="Name" name="entry.2005620554" type="text" />
+    
+            <label>Email</label>
+            <input placeholder="Email" name="entry.1045781291" type="email" required />
+            
+            <label>Whatsapp</label>
+            <input placeholder="DDD + Phonenumber" name="entry.1166974658" type="text" required />
+      
+            <label>Message</label>
+            <textarea placeholder="Write your message here" name="entry.839337160" resize="no" rows="3" required></textarea>
+      
+            <input type="submit" value="Send" />
+      
+        </form>
+    </section>
+
 </body>
-
 </html>

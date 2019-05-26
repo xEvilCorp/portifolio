@@ -1,80 +1,188 @@
 // out: ../prod/main.css, compress: true, sourceMap: false
+* {box-sizing: border-box; margin: 0; padding: 0;}
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 
-@keyframes goAroundSquareA {
-    0% {top: calc(~'0% - 3px'); left: calc(~'0% - 3px');}
-    25% {top: calc(~'0% - 3px'); left: calc(~'100% - 3px'); }
-    50% {top: calc(~'100% - 3px'); left: calc(~'100% - 3px');}
-    75% {top: calc(~'100% - 3px'); left: calc(~'0% - 3px'); }
-    100% {top: calc(~'0% - 3px'); left: calc(~'0% - 3px'); }
-}
-@keyframes goAroundSquareB {
-    0% {top: calc(~'100% - 3px'); left: calc(~'100% - 3px');}
-    25% {top: calc(~'100% - 3px'); left: calc(~'0% - 3px'); }
-    50% {top: calc(~'0% - 3px'); left: calc(~'0% - 3px'); }
-    75% {top: calc(~'0% - 3px'); left: calc(~'100% - 3px'); }
-    100% {top: calc(~'100% - 3px'); left: calc(~'100% - 3px');}
-}
-@keyframes spinText {
-    0% {transform:  scale(1); text-transform: capitalize; }
-    20% {transform:  scale(1.1); text-transform: lowercase;font-family: sans-serif;}
-    40% {transform:  scale(1.1); text-transform: unset; font-family: cursive}
-    60% {transform:  scale(1.2); text-transform: uppercase; font-family: monospace;}
-    80% {transform:  scale(1.2); text-transform: capitalize; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+@desktop: ~'only screen and (min-width: 600px)';
 
-}
-@keyframes scaleButton {
-    0% {transform: scale(1)}
-    100% {transform: scale(1.1)}
-}
 body {
-    background-color: black;
-    margin: 100px;
-    button {
-        border: 1px solid rgb(255, 255, 255);
-        padding: 0 20px;
-        background-color: transparent;
-        color: white;
-        width: 100%;
-        height: 50px;
-        line-height: 50px;
-        border-radius: 3px;
-        text-shadow: 0px 0px 3px rgba(255, 255, 255, 0.719);
-        position: relative;
-        box-shadow: 0px 0px 2px rgba(255, 255, 255, 0.623);
-        animation: scaleButton 1s infinite;  
-        animation-direction: alternate;
-        animation-timing-function: linear;
-        span {
-            display: inline-block;
-            animation: spinText .4s infinite; 
-            animation-timing-function: linear;
- 
+    background-color: #ccc;
+    padding: 15px;
+    header {
+        max-width: 800px;
+        margin: auto;
+        text-align: center;
+        margin-bottom: 15px;
+
+        a {
+            text-decoration: none;
+            color: #333;
+            padding: 20px;
+            position: relative;
+
+            &::before {
+                content:attr(title);
+                position: absolute;
+                display: none;
+                transform: scale(1, -0.6) skewX(-40deg);
+                width: 100%;
+                height: 30px;
+                left: 0px;
+                bottom: 8px;
+                opacity: 0.8;
+                font-weight: 100;
+            }
         }
-        &:before {
-            content: "";
-            position: absolute;
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            top: 0px;
-            box-shadow: 0px 0px 3px 1px rgba(255, 255, 255, 0.705);
-            left: 0px;
-            background-color: white;
-            animation: goAroundSquareA 2s infinite;
+    }
+    main {
+        background-color: white;
+        max-width: 800px;
+        margin: auto;
+        box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.493);
+        display: grid;
+        grid-template-columns: auto;
+        @media @desktop {
+            grid-template-columns: 200px auto;
         }
-        &:after {
-            content: "";
-            position: absolute;
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            top: 0px;
-            box-shadow: 0px 0px 3px 1px rgba(255, 255, 255, 0.712);
-            left: 0px;
-            background-color: white;
-            animation: goAroundSquareB 2s infinite;
+        .wrapper-picture {
+            position: relative;
+            height: 20px;
+            @media @desktop {
+                height: auto;
+            }
+            .picture {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                overflow: hidden;
+                img {
+                    padding: 0;
+                    margin-left: -100px;
+                }
+            }
+        }
+
+        .content {
+            padding: 20px;
+            .role {
+                margin-bottom: 15px;
+            }
+            hr {
+                height: 1px;
+                border: none;
+                background-color: rgb(221, 221, 221);
+                margin-top: 10px;
+                margin-bottom: 10px;
+
+            }
+            .location {
+                .title {
+                    i {
+                        color: rgb(4, 156, 93);
+                    }
+                    span {
+                        font-family: 'Playfair Display', serif;
+                    }
+                }
+                .info {
+                    font-family: 'Open Sans Condensed', sans-serif;
+                }
+            }
+            .about {
+                .title {
+                    margin-bottom: 2px;
+                    i {
+                        color: #9C0472;
+                    }
+                    span {
+                        font-family: 'Playfair Display', serif;
+                    }
+                }
+                .info {
+                    p {
+                        font-family: 'Open Sans Condensed', sans-serif;
+                        text-align: justify;
+                    }
+                }
+            }
+            .social {
+              
+                .title {
+                    margin-bottom:10px;
+                    i {
+                        color: rgb(26, 39, 114);
+                    }
+                    span {
+                        font-family: 'Playfair Display', serif;
+                    }
+                }
+                button {
+                    height: 30px;
+                    width: 30px;
+                    line-height: 30px;
+                    background-color: rgb(233, 233, 233);
+                    color: rgb(58, 58, 58);
+                    font-family: 1.5em;
+                    border-radius: 50%;
+                    border: none;
+                    transition: all 0.3s;
+                    cursor: pointer;
+                    &.discord{
+                        &:hover {
+                            color: white;
+                            background-color: rgb(53, 35, 112);
+                        }
+                    }
+                    &.github {
+                        &:hover {
+                            color: white;
+                            background-color: rgb(216, 32, 0);
+                        }
+                    }
+                    &.linkedin {
+                        &:hover {
+                            color: white;
+                            background-color: rgb(2, 73, 131);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .contect {
+        background-color: white;
+        max-width: 800px;
+        margin: auto;
+        border-radius: 5px;
+        margin-top: 20px;
+        box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.288);
+        .title {
+            background-color: rgb(12, 0, 63);
+            border-radius: 5px 5px 0px 0px;
+            background-image: url(../../img/back2.jpg);
+            color: white;
+            background-size: 100%;
+            padding: 15px;
+        }
+        form {
+            padding: 25px;
+            display: grid;
+            @media @desktop {
+
+            }
+            label {
+                font-family: 'Montserrat', sans-serif;
+                display: inline-block;
+                margin-bottom: 5px;
+            }
+            input, textarea {
+                border:none;
+                border-radius: 5px;
+                padding: 10px;
+                background-color: rgb(235, 235, 235);
+                margin-bottom: 15px;
+                outline: none;
+            }
         }
     }
 }
-
-
