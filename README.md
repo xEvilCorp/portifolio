@@ -1,7 +1,7 @@
 # Portfolio
 
 
-## Preview - <a href="https://xevilcorp.github.io/portifolio/">Visit Page ↵</a>
+## Preview - <a href="https://xevilcorp.github.io/portfolio/">Visit Page ↵</a>
 
 ![image](./img/preview.png)
 
